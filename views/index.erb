@@ -25,9 +25,9 @@
 
   <ul>
     <% @venues.each do |venue| %>
-      <li><a href="/venues/<% venue.id() %>"><%= venue.name() %></a></li>
+      <li><a href="/venues/<%= venue.id() %>"><%= venue.name() %></a></li>
     <% end %>
   </ul>
-  <% else %>
-    <p>There are no venues added yet!</p>
-  <% end %>
+<% else %>
+  <p>There are no venues added yet!</p>
+<% end %>

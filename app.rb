@@ -16,21 +16,21 @@ get('/bands') do
   erb(:bands)
 end
 
+get('/venues') do
+  @venues = Venue.all()
+  erb(:venues)
+end
+
 post('/bands') do
   name = params.fetch('name')
   @bands = Band.all()
   @venues = Venue.all()
   @band = Band.new({:name => name})
   if @band.save
-    erb(:bands)
+    erb(:band_info)
   else
     erb(:errors)
   end
-end
-
-get('/venues') do
-  @venues = Venue.all()
-  erb(:venues)
 end
 
 post('/venues') do
@@ -39,7 +39,7 @@ post('/venues') do
   @bands = Band.all()
   @venue = Venue.new({:name => name})
   if @venue.save
-    erb(:venues)
+    erb(:venue_info)
   else
     erb(:errors)
   end
@@ -51,6 +51,12 @@ get('/bands/:id') do
   erb(:band_info)
 end
 
+get('/venues/:id') do
+  @venue = Venue.find(params.fetch('id').to_i())
+  @bands = Band.all()
+  erb(:venue_info)
+end
+
 patch('/bands/:id') do
   band_id = params.fetch('id').to_i()
   @band = Band.find(band_id)
@@ -58,12 +64,6 @@ patch('/bands/:id') do
   @band.update({:venue_ids => venue_ids})
   @venues = Venue.all()
   erb(:band_info)
-end
-
-get('/venues/:id') do
-  @venue = Venue.find(params.fetch('id').to_i())
-  @bands = Band.all()
-  erb(:venue_info)
 end
 
 patch('/venues/:id') do
