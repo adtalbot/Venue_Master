@@ -1,0 +1,33 @@
+<h1>Welcome to Venue Master</h1>
+<h2>The one stop shop to find where your favorite bands have played!</h2>
+
+<p><a href="/bands">Add a new band</a></p>
+<p><a href="/venues">Add a new venue</a><p>
+
+<h3>Here are all the bands in our database:</h3>
+
+<% if @bands.any?() %>
+  <p>Click on a band to see information about them and mark which venues they have played at:</p>
+
+  <ul>
+    <% @bands.each do |band| %>
+      <li><a href="/bands/<%= band.id() %>"><%= band.name() %></a></li>
+      <% end %>
+  </ul>
+    <% else %>
+      <p>There are no bands added yet!</p>
+    <% end %>
+
+<h3>Here are all the venues in our database:</h3>
+
+<% if @venues.any?() %>
+  <p>Click on a venue to see information about it and mark what bands have played there:</p>
+
+  <ul>
+    <% @venues.each do |venue| %>
+      <li><a href="/venues/<% venue.id() %>"><%= venue.name() %></a></li>
+    <% end %>
+  </ul>
+  <% else %>
+    <p>There are no venues added yet!</p>
+  <% end %>
