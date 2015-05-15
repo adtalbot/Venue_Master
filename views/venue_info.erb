@@ -17,14 +17,22 @@
   </form>
 <% end %>
 
+<p>Click to delete venue</p>
+
+<form action="/venues/<%= @venue.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Delete</button>
+  </div>
+</form>
+
 <% if @venue.bands().any?() %>
+<h3>Here are all the bands that have played at this venue:</h3>
 
-  <h3>Here are all the bands that have played at this venue:</h3>
-
-  <ul>
-    <% @venue.bands().each() do |band| %>
-      <li><%= band.name() %></li>
-    <% end %>
+<ul>
+  <% @venue.bands().each() do |band| %>
+    <li><%= band.name() %></li>
+  <% end %>
   </ul>
 <% else %>
   <p>There are no bands yet! <a href="/bands">Add bands here</a></p>
