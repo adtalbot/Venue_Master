@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  database: venue_master_development
+  template: template0
+
+test:
+  adapter: postgresql
+  database: venue_master_test
+  template: template0
