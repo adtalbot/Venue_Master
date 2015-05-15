@@ -13,7 +13,7 @@
       </div>
     <% end %>
 
-    <button type="submit">Add bands</button>
+    <button type="submit" class="btn btn-info">Update</button>
   </form>
 <% end %>
 
@@ -22,7 +22,7 @@
 <form action="/venues/<%= @venue.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <div class="form-group">
-    <button type="submit" class="btn btn-success">Delete</button>
+    <button type="submit" class="btn btn-info">Delete</button>
   </div>
 </form>
 

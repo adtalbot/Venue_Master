@@ -12,4 +12,5 @@ end
 group(:test) do
   gem('rspec')
   gem('pry')
+  gem('capybara')
 end
