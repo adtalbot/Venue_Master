@@ -1,19 +1,34 @@
-VENUE MASTER version 1.0 (05/15/15)
+Band Tracker
 
-What is it?
+A small database interface to manage bands and venues.
 
-VENUE MASTER is a database of artists, bands, and the corresponding venues they have performed at.
+GitHub Link: https://github.com/KaijuKevin/band_tracker
 
-Installation:
+Description
 
-VENUE MASTER uses ruby version 2.2.0 to install navigate to the 'venue_master' file folder in your terminal then run the following command to install the GEMFILE:
+Band Tracker lets an admin create and update bands and their venues. Practice for many to many database associations. Made for an assesment at Epicodus.
+
+Installation
+
+Band Tracker uses Ruby 2.1.3 You will need to install the bundle gem. In your terminal, navigate to the project directory and run this command:
 
 $ bundle install
+You will also have to create a database with rake
 
-Copyright and Licensing:
+$ rake db:migrate
+To run the page, enter this command in your terminal
 
-For copyright and licensing VENUE MASTER uses the GNU GENERAL PUBLIC LICENSE, version 2.
+$ ruby app.rb
+In your web browser, enter this url: http://localhost:4567
 
-Author:
+Further Development
 
-Audrie Talbot audrie.talbot@gmail.com
+Band Tracker does not have the functionality to delete venues from bands
+
+Authors
+
+Kevin Chen GitHub: https://github.com/KaijuKevin
+
+Lisence
+
+MIT Lisence (c) 2015 Kevin Chen
